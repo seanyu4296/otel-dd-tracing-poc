@@ -1,0 +1,48 @@
+receivers:
+  otlp:
+    protocols:
+      http:
+
+processors:
+  batch:
+    timeout: 10s
+
+exporters:
+  datadog/api:
+    api:
+      key: <INSERT-DD-API-KEY>
+
+service:
+  pipelines:
+    traces:
+      receivers: [otlp]
+      processors: [batch]
+      exporters: [datadog/api]
+# receivers:
+#   otlp:
+#     protocols:
+#       grpc:
+#       http:
+#         cors_allowed_origins:
+#         - http://*
+#         - https://*
+
+# exporters:
+#   zipkin:
+#     endpoint: "http://zipkin-all-in-one:9411/api/v2/spans"
+#   prometheus:
+#     endpoint: "0.0.0.0:9464"
+
+# processors:
+#   batch:
+
+# service:
+#   pipelines:
+#     traces:
+#       receivers: [otlp]
+#       exporters: [zipkin]
+#       processors: [batch]
+#     metrics:
+#       receivers: [otlp]
+#       exporters: [prometheus]
+#       processors: [batch]
