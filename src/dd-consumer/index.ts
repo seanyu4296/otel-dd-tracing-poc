@@ -4,11 +4,7 @@ import { tracer } from "./tracer";
 
 import { amqpConsumer } from "../services/amqp-consumer";
 
-// TODO: fix xsh-go-tracing first
 // TODO: try fanout
-// TODO: try with xendit-queue-service
-// TODO: test otel amqp
-// TODO: read staff engineer
 
 // https://app.datadoghq.com/apm/resource/dd-consumer/amqp.consumeHandler/e1494b1e0c4e71c4?query=env%3Alocal-sean%20service%3Add-consumer%20operation_name%3Aamqp.consumeHandler%20resource_name%3A%22no-exchange%20tasks%22&env=local-sean&event=AQAAAXpNz17z5XMOTwAAAABBWHBOejJ1WUFBQTlPQURmeWJ2X3lZeEM&index=apm-search&spanID=6599087287027667718&traceID=4795271549903187511&start=1624790614775&end=1624877014775&paused=false
 (async () => {
