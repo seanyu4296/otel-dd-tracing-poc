@@ -20,12 +20,12 @@
     "@opentelemetry/node": "0.21.0",
     "amqplib": "^0.8.0",
     "concurrently": "^6.2.0",
-    "dd-trace": "^0.36.0",
+    "dd-trace": "0.36.1",
     "express": "^4.17.1",
     "int64-buffer": "^1.0.1",
     "opentelemetry-instrumentation-amqplib": "^0.21.0",
     "opentelemetry-instrumentation-express": "0.21.0",
-    "@boxbag/xsh-node-tracing": "file://../../xendit-projects/xsh-node-tracing",
+    "@boxbag/xsh-node-tracing": "0.2.1",
     "@boxbag/xsh-node-queue-service": "file://../../xendit-projects/xsh-node-queue-service"
   },
   "devDependencies": {
