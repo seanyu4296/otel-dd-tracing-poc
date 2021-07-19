@@ -9,11 +9,16 @@ export async function serverPublisher(svc: string, port: number) {
   const channel = await connection.createChannel();
   await channel.assertQueue(QUEUE_NAME);
   app.get("/", async (req, res) => {
-    await delay(1000);
-    channel.sendToQueue(
-      QUEUE_NAME,
+    await delay(200);
+    channel.publish(
+      "test",
+      "test.multiqueue",
       Buffer.from(JSON.stringify({ test: "something to do" }))
     );
+    // channel.sendToQueue(
+    //   QUEUE_NAME,
+    //   Buffer.from(JSON.stringify({ test: "something to do" }))
+    // );
     res.json({
       from: svc,
     });

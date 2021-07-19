@@ -1,6 +1,6 @@
 // https://app.datadoghq.com/apm/traces?query=env%3Alocal-sean&graphType=flamegraph&spanID=2676823558517863600&streamTraces=true&traceID=8383724660644987437&start=1624698554726&end=1624699454726&paused=false
 import * as amqp from "amqplib";
-import { tracer } from "./tracer";
+import { tracer } from "./tracer-2";
 
 import { amqpConsumer } from "../services/amqp-consumer";
 
@@ -8,7 +8,7 @@ import { amqpConsumer } from "../services/amqp-consumer";
 
 // https://app.datadoghq.com/apm/resource/dd-consumer/amqp.consumeHandler/e1494b1e0c4e71c4?query=env%3Alocal-sean%20service%3Add-consumer%20operation_name%3Aamqp.consumeHandler%20resource_name%3A%22no-exchange%20tasks%22&env=local-sean&event=AQAAAXpNz17z5XMOTwAAAABBWHBOejJ1WUFBQTlPQURmeWJ2X3lZeEM&index=apm-search&spanID=6599087287027667718&traceID=4795271549903187511&start=1624790614775&end=1624877014775&paused=false
 (async () => {
-  await amqpConsumer("test", "test1", (ch, msg) => {
+  await amqpConsumer("test", "test2", (ch, msg) => {
     if (msg) {
       const childOf = tracer.extract("text_map", msg.properties.headers);
       // TODO: need to add proper resource name and tags
